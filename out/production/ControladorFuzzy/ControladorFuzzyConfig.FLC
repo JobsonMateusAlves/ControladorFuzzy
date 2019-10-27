@@ -1,0 +1,45 @@
+
+FUNCTION_BLOCK Pluviometro
+
+    VAR_INPUT
+        velocidadeDoVento: REAL;
+        umidadeDoAr: REAL;
+        periodoDoAno: REAL;
+        pressaoAtmosferica: REAL;
+    END_VAR
+
+    VAR_OUTPUT
+        indicePluviometrico: REAL;
+    END_VAR
+
+    //--------------------------------------- FUZZIFY -----------------------------------------
+    FUZZIFY velocidadeDoVento
+
+    END_FUZZIFY
+
+    FUZZIFY umidadeDoAr
+
+    END_FUZZIFY
+
+    FUZZIFY periodoDoAno
+
+    END_FUZZIFY
+
+    FUZZIFY pressaoAtmosferica
+
+    END_FUZZIFY
+    //------------------------------------- END_FUZZIFY -----------------------------------------
+
+    //-------------------------------------- DEFUZZIFY ----------------------------------------
+
+    DEFUZZIFY nome_variavel_saida
+        // definição das partições fuzzy e seus intervalos para cada variável de saída
+
+        TERM PARTICAO_Y := (0.0, 0) (50.0, 1) (100.0, 0) ;
+        METHOD : COG;  // Método de defuzzificação (Padrão é o Centro de Gravidade)
+        DEFAULT := 0;  // Valor default caso nenhuma regra seja ativada
+    END_DEFUZZIFY
+
+    //------------------------------------- END_FUZZIFY -----------------------------------------
+
+END_FUNCTION_BLOCK
