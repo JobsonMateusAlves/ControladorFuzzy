@@ -56,6 +56,7 @@ FUNCTION_BLOCK Pluviometro
             AND : MIN;  // Método MIN utilizado no processamento do operador lógico AND
             ACT : MIN;  // Método de ativação
             ACCU : MAX; // método de acumulação
+
             //                                 vel                    umidade                    semestre                          pressao
             RULE 1  : IF velocidadeDoVento IS BAIXA AND umidadeDoAr IS BAIXA AND periodoDoAno IS PRIMEIRO AND pressaoAtmosferica IS BAIXA THEN indicePluviometrico IS MODERADA;
             RULE 2  : IF velocidadeDoVento IS BAIXA AND umidadeDoAr IS BAIXA AND periodoDoAno IS PRIMEIRO AND pressaoAtmosferica IS ALTA THEN indicePluviometrico IS FRACA;

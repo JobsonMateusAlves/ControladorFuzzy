@@ -1,16 +1,36 @@
+import net.sourceforge.jFuzzyLogic.FIS;
+import org.antlr.runtime.RecognitionException;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
 import java.util.Scanner;
 
 public class ControladorFuzzy {
 
+    public static void main(String[] args) throws URISyntaxException, RecognitionException, IOException {
 
+//        Scanner scan = new Scanner(System.in);
 
-    public static void main(String[] args) {
+//        Entradas entradas = leitura();
+        File arquivoFis = new File(ControladorFuzzy.class.getResource("ControladorFuzzyConfig.flc").toURI());
 
-        Scanner scan = new Scanner(System.in);
+        String conteudoArquivoFis = new String(Files.readAllBytes(arquivoFis.toPath()));
+        FIS fis = FIS.createFromString(conteudoArquivoFis, true);
 
-        Entradas entradas = leitura();
+        fis.setVariable("velocidadeDoVento", 45.0);
+        fis.setVariable("umidadeDoAr", 96.0);
+        fis.setVariable("periodoDoAno", 10.0);
+        fis.setVariable("pressaoAtmosferica", 0.0);
 
-        System.out.println(entradas);
+        fis.evaluate();
+
+        Double resultado = fis.getVariable("indicePluviometrico").getValue();
+
+        System.out.println(resultado);
+
+//        FIS fis = FIS.load("ControladorFuzzyConfig.flc");
     }
 
     public static Entradas leitura() {
