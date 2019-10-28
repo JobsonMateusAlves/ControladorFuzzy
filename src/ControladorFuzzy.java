@@ -19,16 +19,15 @@ public class ControladorFuzzy {
         String conteudoArquivoFis = new String(Files.readAllBytes(arquivoFis.toPath()));
         FIS fis = FIS.createFromString(conteudoArquivoFis, true);
 
-        fis.setVariable("velocidadeDoVento", 45.0);
-        fis.setVariable("umidadeDoAr", 96.0);
-        fis.setVariable("periodoDoAno", 10.0);
+        fis.setVariable("velocidadeDoVento", 44.0);
+        fis.setVariable("umidadeDoAr", 93.0);
+        fis.setVariable("periodoDoAno", 9.0);
         fis.setVariable("pressaoAtmosferica", 0.0);
+
 
         fis.evaluate();
 
-        Double resultado = fis.getVariable("indicePluviometrico").getValue();
-
-        System.out.println(resultado);
+        System.out.println(fis.getVariable("indicePluviometrico").getValue());
 
 //        FIS fis = FIS.load("ControladorFuzzyConfig.flc");
     }

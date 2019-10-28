@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b262658-10a0-4805-886b-5b3d862df88f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ControladorFuzzyConfig.flc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ControladorFuzzy/ControladorFuzzyConfig.FLC" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ControladorFuzzy/ControladorFuzzyConfig.FLC" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ControladorFuzzy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControladorFuzzy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ControladorFuzzyConfig.FLC" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1572185984457</updated>
       <workItem from="1572185993236" duration="1363000" />
-      <workItem from="1572196698791" duration="8040000" />
+      <workItem from="1572196698791" duration="8997000" />
     </task>
     <servers />
   </component>
