@@ -1,4 +1,6 @@
 import net.sourceforge.jFuzzyLogic.FIS;
+import net.sourceforge.jFuzzyLogic.plot.JFuzzyChart;
+import net.sourceforge.jFuzzyLogic.rule.Variable;
 import org.antlr.runtime.RecognitionException;
 
 import java.io.File;
@@ -22,14 +24,16 @@ public class ControladorFuzzy {
         String conteudoArquivoFis = new String(Files.readAllBytes(arquivoFis.toPath()));
         FIS fis = FIS.createFromString(conteudoArquivoFis, true);
 
-        fis.setVariable("velocidadeDoVento", 44.0);
-        fis.setVariable("umidadeDoAr", 93.0);
-        fis.setVariable("periodoDoAno", 9.0);
-        fis.setVariable("pressaoAtmosferica", 0.0);
+        fis.setVariable("velocidadeDoVento", 0);
+        fis.setVariable("umidadeDoAr", 0);
+        fis.setVariable("periodoDoAno", 1);
+        fis.setVariable("pressaoAtmosferica", 0);
 
         fis.evaluate();
 
-        System.out.println(fis.getVariable("indicePluviometrico").getValue());
+        Variable resultado = fis.getVariable("indicePluviometrico");
+
+        System.out.println(resultado.getValue());
     }
 
     public static Entradas leitura() {
