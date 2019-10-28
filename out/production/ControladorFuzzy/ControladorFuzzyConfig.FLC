@@ -50,6 +50,7 @@ DEFUZZIFY indicePluviometrico
 END_DEFUZZIFY
 
 //------------------------------------- END_FUZZIFY -----------------------------------------
+
 //------------------------------------- RULE_BLOCK ------------------------------------------
 RULEBLOCK No1
     AND : MIN;  // Método MIN utilizado no processamento do operador lógico AND

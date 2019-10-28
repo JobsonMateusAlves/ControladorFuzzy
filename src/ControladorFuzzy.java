@@ -13,27 +13,27 @@ public class ControladorFuzzy {
 
     public static void main(String[] args) throws URISyntaxException, RecognitionException, IOException {
 
-//        Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
 
-//        Entradas entradas = leitura();
+        do {
+            Entradas entradas = leitura();
 
+            File arquivoFis = new File(ControladorFuzzy.class.getResource("ControladorFuzzyConfig.flc").toURI());
 
+            String conteudoArquivoFis = new String(Files.readAllBytes(arquivoFis.toPath()));
+            FIS fis = FIS.createFromString(conteudoArquivoFis, true);
 
-        File arquivoFis = new File(ControladorFuzzy.class.getResource("ControladorFuzzyConfig.flc").toURI());
+            fis.setVariable("velocidadeDoVento", entradas.velocidadeDoVento);
+            fis.setVariable("umidadeDoAr", entradas.umidadeDoAr);
+            fis.setVariable("periodoDoAno", entradas.periodoDoAno);
+            fis.setVariable("pressaoAtmosferica", entradas.pressaoAtmosferica);
 
-        String conteudoArquivoFis = new String(Files.readAllBytes(arquivoFis.toPath()));
-        FIS fis = FIS.createFromString(conteudoArquivoFis, true);
+            fis.evaluate();
 
-        fis.setVariable("velocidadeDoVento", 0);
-        fis.setVariable("umidadeDoAr", 0);
-        fis.setVariable("periodoDoAno", 1);
-        fis.setVariable("pressaoAtmosferica", 0);
+            Variable resultado = fis.getVariable("indicePluviometrico");
 
-        fis.evaluate();
-
-        Variable resultado = fis.getVariable("indicePluviometrico");
-
-        System.out.println(resultado.getValue());
+            System.out.println(resultado);
+        } while (true);
     }
 
     public static Entradas leitura() {
@@ -54,17 +54,13 @@ public class ControladorFuzzy {
         System.out.println("Informe a pressao atmosferica(miliBar):");
         entradas.pressaoAtmosferica = scan.nextDouble();
 
+//        entradas.velocidadeDoVento = 0;
+//        entradas.umidadeDoAr = 0;
+//        entradas.periodoDoAno = 9;
+//        entradas.pressaoAtmosferica = 0;
+
         return entradas;
     }
-}
-
-enum IndicePluviometrico {
-
-    BAIXA,
-    FRACA,
-    MODERADA,
-    FORTE,
-    VIOLENTA
 }
 
 class Entradas {
