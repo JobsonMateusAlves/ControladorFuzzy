@@ -14,6 +14,9 @@ public class ControladorFuzzy {
 //        Scanner scan = new Scanner(System.in);
 
 //        Entradas entradas = leitura();
+
+
+
         File arquivoFis = new File(ControladorFuzzy.class.getResource("ControladorFuzzyConfig.flc").toURI());
 
         String conteudoArquivoFis = new String(Files.readAllBytes(arquivoFis.toPath()));
@@ -24,12 +27,9 @@ public class ControladorFuzzy {
         fis.setVariable("periodoDoAno", 9.0);
         fis.setVariable("pressaoAtmosferica", 0.0);
 
-
         fis.evaluate();
 
         System.out.println(fis.getVariable("indicePluviometrico").getValue());
-
-//        FIS fis = FIS.load("ControladorFuzzyConfig.flc");
     }
 
     public static Entradas leitura() {
