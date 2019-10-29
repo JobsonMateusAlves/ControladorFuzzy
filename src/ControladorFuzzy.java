@@ -42,7 +42,7 @@ public class ControladorFuzzy {
 
         Entradas entradas = new Entradas();
 
-        System.out.println("Informe a velocidade do vento (m/s):");
+        System.out.println("Informe a velocidade do vento (km/h):");
         entradas.velocidadeDoVento = scan.nextDouble();
 
         System.out.println("Informe a umidade do ar (%):");
