@@ -33,7 +33,6 @@ public class ControladorFuzzy {
             Variable resultado = fis.getVariable("indicePluviometrico");
 
             System.out.println(resultado);
-            System.out.println(resultado.getValue());
         } while (true);
     }
 

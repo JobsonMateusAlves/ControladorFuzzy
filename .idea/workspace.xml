@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ControladorFuzzy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControladorFuzzy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ControladorFuzzyConfig.flc" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControladorFuzzyConfig.flc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/novo.flc" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,6 +80,7 @@
       <workItem from="1572185993236" duration="1363000" />
       <workItem from="1572196698791" duration="14024000" />
       <workItem from="1572360839583" duration="12177000" />
+      <workItem from="1572570653915" duration="1123000" />
     </task>
     <servers />
   </component>
